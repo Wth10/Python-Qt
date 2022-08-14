@@ -1,4 +1,4 @@
-### Python_QT
+### Projects with python and Qt Designer
 
 ---
 
