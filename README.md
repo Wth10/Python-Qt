@@ -11,3 +11,5 @@ pyinstaller --windowed Main.py
 ```
 
 Move qt designer file to new executable folder
+
+[PyInstaller](https://pyinstaller.org/en/stable/)
