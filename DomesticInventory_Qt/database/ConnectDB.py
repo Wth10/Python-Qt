@@ -1,7 +1,7 @@
 import sqlite3
 
 
-File = ".Home_Inventory.db"
+File = "./database/Home_Inventory.db"
 
 
 def ConnectDB():
