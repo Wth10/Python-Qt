@@ -16,4 +16,8 @@ class CardCountry(QWidget):
 
     def Load(self):
         self.Status.setText(f"Status {self.x.Country}")
-        self.Confirmed.setText(f"{self.x.Confirmed} Confirmados")
+        self.DateUpdate.setText(f"2020-03-18T23:00:00.000Z")
+        self.ConfirmedText.setText(f"{self.x.Confirmed} Casos Confirmados")
+        self.ActiveText
+        self.RecoveredText
+        self.DeathText

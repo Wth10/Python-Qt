@@ -23,6 +23,7 @@ class MainWindow(QMainWindow):
 
     def UpdateDataCovid(self):
         self.Table.clear()
+        self.ClearCard()
 
         for x in range(5):
             w = Country(
@@ -36,3 +37,8 @@ class MainWindow(QMainWindow):
 
             Card = CardCountry(w)
             self.CardConteiner.addWidget(Card)
+
+    def ClearCard(self):
+        for x in range(self.CardConteiner.count()):
+            Card = self.CardConteiner.itemAt(x).widget()
+            Card.hide()
