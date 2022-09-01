@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QFrame" name="Ftitle">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="Title">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>15</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string>Receitas</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="icon">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../assets/icons/icons8-crescimento-económico-48.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QFormLayout" name="FormLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="LabelDescription">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Descrição</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="InputDescription">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="LabelPrice">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Valor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="InputPrice">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>5</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
+          <property name="wrapping">
+           <bool>true</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="prefix">
+           <string/>
+          </property>
+          <property name="decimals">
+           <number>2</number>
+          </property>
+          <property name="maximum">
+           <double>10000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="BtnSave">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Salvar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="BtnEdit">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Editar</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="BtnDelete">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>Excluir</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>14</pointsize>
+          <italic>true</italic>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tabela Com Receitas</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="Table">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <column>
+         <property name="text">
+          <string>Id</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Descrição</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Valor</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
