@@ -87,7 +87,7 @@
       <item>
        <layout class="QFormLayout" name="FormLayout">
         <item row="0" column="0">
-         <widget class="QLabel" name="LabelDescripton">
+         <widget class="QLabel" name="LabelDescription">
           <property name="font">
            <font>
             <family>Arial</family>
@@ -129,7 +129,7 @@
            </font>
           </property>
           <property name="decimals">
-           <number>1</number>
+           <number>2</number>
           </property>
           <property name="maximum">
            <double>10000000.000000000000000</double>
@@ -210,7 +210,23 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="AlertErro">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="TitleTable">
         <property name="font">
          <font>
           <family>Arial Black</family>

@@ -7,10 +7,6 @@ from model.Expenses_DAO import Expenses_DAO
 File_Qt = "view/Despesa.ui"
 
 
-def ClearField(self):
-    self.InputDescription.clear()
-
-
 class ControlExpenses(QWidget):
     def __init__(self) -> None:
         super(ControlExpenses, self).__init__()
@@ -27,6 +23,11 @@ class ControlExpenses(QWidget):
 
         self.LoadData()
 
+    def ClearField(self):
+        self.InputDescription.clear()
+        self.InputPrice.clear()
+        self.AlertErro.clear()
+
     def LoadData(self):
         list = Expenses_DAO.SelectAll()
         for x in list:
@@ -36,12 +37,15 @@ class ControlExpenses(QWidget):
         Description = self.InputDescription.text()
         Price = self.InputPrice.text()
 
-        New = Expenses(-1, Description, Price)
+        if Description == "" or Price == "":
+            self.AlertErro.setText(f"Preencha Todos Os Campos")
+        else:
+            New = Expenses(-1, Description, Price)
 
-        Id = Expenses_DAO.AddDAO(New)
-        New.Id = Id
-        self.AddTableWidget(New)
-        ClearField(self)
+            Id = Expenses_DAO.AddDAO(New)
+            New.Id = Id
+            self.AddTableWidget(New)
+            self.ClearField()
 
     def EditExpenses(self):
         Line = self.Table.currentRow()

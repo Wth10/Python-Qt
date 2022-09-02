@@ -14,14 +14,13 @@ class Home(QWidget):
     def __init__(self) -> None:
         super(Home, self).__init__()
         uic.loadUi(File_Qt, self)
-
         self.Alert()
 
-    def FormatNumber(self, Value):
+    def FormatNumber(self, w):
         locale.setlocale(locale.LC_ALL, "pt_BR")
-        valor = Decimal(Value)
-        FormatNumber = locale.currency(valor, grouping=True)
-        return FormatNumber
+        x = Decimal(0 if w is None else w)
+        a = locale.currency(x, grouping=True)
+        return a
 
     def Alert(self):
         Revenue = Revenue_DAO.CountRevenueDAO()
@@ -30,5 +29,4 @@ class Home(QWidget):
         Expenses = Expenses_DAO.CountExpensesDAO()
         self.LD.setText(f"{self.FormatNumber(Expenses)}")
 
-        Total = Revenue - Expenses
-        self.LT.setText(f"{self.FormatNumber(Total)}")
+        self.LT.setText(f"{self.FormatNumber(Revenue - Expenses)}")

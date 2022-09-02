@@ -28,8 +28,7 @@ LIGHT = """
 }
 
 
-
-#Ftitle .QLabel{
+#Form, #TitleHome{
 	color: rgb(0, 0, 0);
 }
 #Form, #Card, #LR, #LT,  #LD{
@@ -42,6 +41,9 @@ LIGHT = """
 }
 #Form, Ftitle, .QLabel{
 	color: rgb(0, 0, 0);
+}
+#Form, #AlertErro{
+	color: rgb(255, 0, 0);
 }
 .QLineEdit{
 	border: 1.5px solid rgb(26, 95, 180);
@@ -103,7 +105,6 @@ DARK = """
 
 
 
-
 .QLineEdit{
 	border: 1.5px solid rgb(26, 95, 180);
 	border-radius: 5px;
@@ -131,12 +132,21 @@ DARK = """
 	border: 2px ;
 	color: white;
 }
+
+#Form, #LD, #LR, #LT, #TitleHome{
+	color: rgb(255, 255, 255);
+}
+
 #Table{
 	background-color: #0d0721;
 	color: rgb(255, 255, 255);
-
 }
-#Form .QLabel{
+
+#Form, #Title, #TitleTable, #LabelDescription, #LabelPrice{
 	color: rgb(255, 255, 255);
+}
+
+#Form, #AlertErro{
+	color: rgb(255, 0, 0);
 }
 """

@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         uic.loadUi(File_Qt, self)
 
+        self.setWindowTitle("Finance")
         self.showMaximized()
 
         # Cria os objetos das páginas
@@ -56,3 +57,6 @@ class MainWindow(QMainWindow):
             self.setStyleSheet(LIGHT)
         else:
             self.setStyleSheet(DARK)
+
+    def UpdateData(self):
+        self.PagHome.UpdateData()

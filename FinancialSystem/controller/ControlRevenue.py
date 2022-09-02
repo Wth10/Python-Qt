@@ -7,10 +7,6 @@ from model.Revenue_DAO import Revenue_DAO
 File_Qt = "view/Receita.ui"
 
 
-def ClearField(self):
-    self.InputDescription.clear()
-
-
 class ControlRevenue(QWidget):
     def __init__(self) -> None:
         super(ControlRevenue, self).__init__()
@@ -27,6 +23,11 @@ class ControlRevenue(QWidget):
 
         self.LoadData()
 
+    def ClearField(self):
+        self.InputDescription.clear()
+        self.InputPrice.clear()
+        self.AlertErro.clear()
+
     def LoadData(self):
         list = Revenue_DAO.SelectAll()
         for x in list:
@@ -36,13 +37,15 @@ class ControlRevenue(QWidget):
         Description = self.InputDescription.text()
         Price = self.InputPrice.text()
 
-        New = Revenue(-1, Description, Price)
+        if Description == "" or Price == "":
+            self.AlertErro.setText(f"Preencha Todos Os Campos")
+        else:
+            New = Revenue(-1, Description, Price)
 
-        Id = Revenue_DAO.AddDAO(New)
-        New.Id = Id
-        self.AddTableWidget(New)
-        ClearField(self)
-        self.Alert()
+            Id = Revenue_DAO.AddDAO(New)
+            New.Id = Id
+            self.AddTableWidget(New)
+            self.ClearField()
 
     def EditRecipe(self):
         Line = self.Table.currentRow()
@@ -56,7 +59,6 @@ class ControlRevenue(QWidget):
 
         self.Edition(Update)
         Revenue_DAO.EditDAO(Update, int(Id))
-        self.Alert()
 
     def Edition(self, w: Revenue):
         Line = self.Table.currentRow()
