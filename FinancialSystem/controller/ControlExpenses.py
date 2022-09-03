@@ -3,6 +3,7 @@ from PyQt6 import uic
 
 from model.Expenses import Expenses
 from model.Expenses_DAO import Expenses_DAO
+from model.Home_DAO import Home_DAO
 
 File_Qt = "view/Despesa.ui"
 
@@ -37,11 +38,16 @@ class ControlExpenses(QWidget):
         Description = self.InputDescription.text()
         Price = self.InputPrice.text()
 
+        Revenuew = Home_DAO.CountRevenueDAO()
+
         if Description == "" or Price == "":
             self.AlertErro.setText(f"Preencha Todos Os Campos")
+        elif Revenuew == None:
+            self.AlertErro.setText(
+                f"Você Não Pode Cadastrar Desepesa Sem Nenhuma Receita!"
+            )
         else:
             New = Expenses(-1, Description, Price)
-
             Id = Expenses_DAO.AddDAO(New)
             New.Id = Id
             self.AddTableWidget(New)
@@ -50,15 +56,17 @@ class ControlExpenses(QWidget):
     def EditExpenses(self):
         Line = self.Table.currentRow()
         LineId = self.Table.item(Line, 0)
-
         Id = LineId.text()
+
         Description = self.InputDescription.text()
         Price = self.InputPrice.text()
 
-        Update = Expenses(-1, Description, Price)
-
-        self.Edition(Update)
-        Expenses_DAO.EditDAO(Update, int(Id))
+        if Description == "" or Price == "":
+            self.AlertErro.setText(f"Preencha Todos Os Campos")
+        else:
+            Update = Expenses(-1, Description, Price)
+            self.Edition(Update)
+            Expenses_DAO.EditDAO(Update, int(Id))
 
     def Edition(self, w: Expenses):
         Line = self.Table.currentRow()
@@ -69,7 +77,7 @@ class ControlExpenses(QWidget):
         self.Table.setItem(Line, 1, Description)
         self.Table.setItem(Line, 2, Price)
 
-        ClearField(self)
+        self.ClearField()
 
     def DeleteExpenses(self):
         Line = self.Table.currentRow()

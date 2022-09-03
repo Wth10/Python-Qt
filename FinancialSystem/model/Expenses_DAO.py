@@ -39,17 +39,6 @@ class Expenses_DAO:
         connect.commit()
         connect.close()
 
-    def CountExpensesDAO():
-        connect = DB()
-        cursor = connect.cursor()
-
-        SQL = "SELECT SUM(Price) FROM Despesa"
-
-        w = cursor.execute(SQL)
-        x = w.fetchone()[0]
-        connect.close()
-        return x
-
     def SelectAll() -> list:
         Finance_List = []
 

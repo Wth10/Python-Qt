@@ -58,5 +58,7 @@ class MainWindow(QMainWindow):
         else:
             self.setStyleSheet(DARK)
 
-    def UpdateData(self):
-        self.PagHome.UpdateData()
+    # def UpdateData(self):
+    #     UpdateData = self.Alert()
+    #     Btn = self.mainWindow.UpdateHome(UpdateData)
+    #     return Btn

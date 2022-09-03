@@ -39,17 +39,6 @@ class Revenue_DAO:
         connect.commit()
         connect.close()
 
-    def CountRevenueDAO():
-        connect = DB()
-        cursor = connect.cursor()
-
-        SQL = "SELECT SUM(Price) FROM Receita"
-
-        w = cursor.execute(SQL)
-        x = w.fetchone()[0]
-        connect.close()
-        return x
-
     def SelectAll() -> list:
         Finance_List = []
 

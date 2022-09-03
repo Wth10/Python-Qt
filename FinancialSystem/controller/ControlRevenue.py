@@ -52,24 +52,25 @@ class ControlRevenue(QWidget):
         LineId = self.Table.item(Line, 0)
 
         Id = LineId.text()
+
         Description = self.InputDescription.text()
         Price = self.InputPrice.text()
 
-        Update = Revenue(-1, Description, Price)
-
-        self.Edition(Update)
-        Revenue_DAO.EditDAO(Update, int(Id))
+        if Description == "" or Price == "":
+            self.AlertErro.setText(f"Preencha Todos Os Campos")
+        else:
+            Update = Revenue(-1, Description, Price)
+            self.Edition(Update)
+            Revenue_DAO.EditDAO(Update, int(Id))
 
     def Edition(self, w: Revenue):
         Line = self.Table.currentRow()
 
         Description = QTableWidgetItem(w.Description)
         Price = QTableWidgetItem(f"R$ {w.Price}")
-
         self.Table.setItem(Line, 1, Description)
         self.Table.setItem(Line, 2, Price)
-
-        ClearField(self)
+        self.ClearField()
 
     def DeleteRecipe(self):
         Line = self.Table.currentRow()
