@@ -42,6 +42,7 @@ class MainWindow(QMainWindow):
 
         if ClickedButton == "BtnHome":
             self.StackedWidget.setCurrentIndex(0)
+            self.PagHome.Alert()
 
         if ClickedButton == "BtnRevenue":
             self.StackedWidget.setCurrentIndex(1)
@@ -57,8 +58,3 @@ class MainWindow(QMainWindow):
             self.setStyleSheet(LIGHT)
         else:
             self.setStyleSheet(DARK)
-
-    # def UpdateData(self):
-    #     UpdateData = self.Alert()
-    #     Btn = self.mainWindow.UpdateHome(UpdateData)
-    #     return Btn
