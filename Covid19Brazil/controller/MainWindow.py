@@ -1,8 +1,13 @@
+from random import randint
 from PyQt6.QtWidgets import QMainWindow, QHeaderView
+
+from PyQt6 import uic
+from API.ConnectAPI import API
+
 from controller.CardCountry import CardCountry
 from model.CardCountry import Country
-from PyQt6 import uic
-from random import randint
+from model.Covid19Brazil import Covid19Brazil as CVB19
+from model.Covid19Brazil_DAO import Covid19Brazil_DAO as CVB19_DAO
 
 File_Qt = "view/Home.ui"
 
@@ -22,7 +27,6 @@ class MainWindow(QMainWindow):
         self.UpdateAPI.clicked.connect(self.UpdateDataCovid)
 
     def UpdateDataCovid(self):
-        self.Table.clear()
         self.ClearCard()
 
         for x in range(5):
@@ -37,6 +41,8 @@ class MainWindow(QMainWindow):
 
             Card = CardCountry(w)
             self.CardConteiner.addWidget(Card)
+
+        self.Table.clear()
 
     def ClearCard(self):
         for x in range(self.CardConteiner.count()):
